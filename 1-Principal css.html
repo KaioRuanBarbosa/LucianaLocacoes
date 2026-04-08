@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luciana Locações</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #fdf6f0; }
+
+    header { background-color: #f30cf3; color: white; padding: 20px; text-align: center; }
+
+    nav { background-color: #eb11bc; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+    .banner {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('piscina-bolinhas.jpg') no-repeat center;
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+    }
+
+    .container { padding: 40px; text-align: center; }
+
+    .services { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img { width: 100%; border-radius: 10px; }
+
+    footer { background-color: #ff06ff; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #f703ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover { background-color: #f700ff; }
+
+    /* FORMULÁRIO */
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      margin-top: 30px;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff03ea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <font size="5"><h1>Luciana Locações</h1></font>
+  <p>Diversão garantida para seu evento!</p>
+</header>
+
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#servicos">Brinquedos</a>
+  <a href="3-Imagens.html">Imagens</a>
+  <a href="#orcamento">Orçamento</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<div class="banner">
+  Aluguel de Brinquedos para Festas e Eventos 🎉
+</div>
+
+<section class="container">
+  <p><strong>Atendemos em Jundiaí e região</strong></p>
+</section>
+
+<section class="container" id="servicos">
+  <h2>Nossos Brinquedos</h2>
+  <div class="services">
+
+    <div class="card">
+      <img src="imagens/cama.jpg.jpeg" alt="Cama Elástica">
+      <h3>Cama Elástica<br> 
+      2,44m</h3>
+      <p>Ideal para festas infantis.</p>
+      
+      <a href="imagens.html" class="btn">Ver Imagens</a>
+    </div>
+
+    <div class="card">
+      <img src="imagens/bolinhas.jpg.jpeg" alt="Piscina de Bolinhas">
+      <h3>Piscina de Bolinhas<br>
+       1,5m x 1,5m</h3>
+      <p>Perfeita para crianças.</p>
+      
+      <a href="imagens.html" class="btn">Ver Imagens</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMULÁRIO VOLTOU -->
+<section class="container" id="orcamento">
+  <h2>Solicitar Orçamento</h2>
+
+  <div class="form-container">
+    <form onsubmit="enviarWhatsApp(event)">
+
+      <label>Nome:</label>
+      <input type="text" id="nome" required>
+
+      <label>Telefone:</label>
+      <input type="tel" id="telefone" required>
+
+      <label>Data do evento:</label>
+      <input type="date" id="data" required>
+
+      <label>Endereço:</label>
+      <input type="text" id="endereco" required>
+
+      <label>Brinquedo desejado:</label>
+      <select id="brinquedo">
+        <option>Cama Elástica</option>
+        <option>Piscina de Bolinhas</option>
+      </select>
+
+      <label>Observações:</label>
+      <textarea id="mensagem" rows="4"></textarea>
+
+      <button type="submit">Enviar pelo WhatsApp</button>
+
+    </form>
+  </div>
+</section>
+
+<section class="container" id="contato">
+  <h2>Contato</h2>
+  <p>📞 Telefone/WhatsApp: +55 11 94174-0663</p>
+  <a class="btn" href="https://wa.me/5511941740663" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<footer>
+  <p>&copy; valores informados pelo WhatsApp</p>
+</footer>
+
+<script>
+function enviarWhatsApp(event) {
+  event.preventDefault();
+
+  let nome = document.getElementById("nome").value;
+  let telefone = document.getElementById("telefone").value;
+  let data = document.getElementById("data").value;
+  let endereco = document.getElementById("endereco").value;
+  let brinquedo = document.getElementById("brinquedo").value;
+  let mensagem = document.getElementById("mensagem").value;
+
+  let texto = `Olá! Gostaria de um orçamento:\n
+Nome: ${nome}\n
+Telefone: ${telefone}\n
+Data: ${data}\n
+Endereço: ${endereco}\n
+Brinquedo: ${brinquedo}\n
+Observações: ${mensagem}`;
+
+  let url = `https://wa.me/5511941740663?text=${encodeURIComponent(texto)}`;
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
